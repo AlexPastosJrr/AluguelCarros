@@ -1,0 +1,65 @@
+﻿@model MeuAluguelDeCarros.Models.Entities.Carro
+
+
+@{
+    ViewBag.Title = "Cadastre Seu Carro";
+}
+
+<h2>Novo Carro</h2>
+
+<form method="post">
+    <div class="form-group">
+
+        <div>
+            @Html.LabelFor(x => x.Descricao)
+            @Html.TextBoxFor(x => x.Descricao, new { @class = " form-control ", @maxlength = "100", id="descricao" })
+        </div>
+
+        <div>
+
+            @Html.LabelFor(x => x.Cor)
+            @Html.TextBoxFor(x => x.Cor, new { @class = " form-control ", @maxlength = "20", id = "cor" })
+        </div>
+
+        <div>
+            <label for="Placa">Placa do Veiculo</label>
+            @Html.TextBoxFor(x => x.PlacaDoVeiculo, new { @class = " form-control ", @maxlength = "7", id = "placa" })
+        </div>
+
+        <div>
+
+            @Html.LabelFor(x => x.Ano)
+            @Html.TextBoxFor(x => x.Ano, new { @class = " form-control ", @maxlength = "4", id = "ano" })
+        </div>
+
+        <div>
+
+            @Html.LabelFor(x => x.Marca)
+            @Html.TextBoxFor(x => x.Marca, new { @class = " form-control ", @maxlength = "50", id = "marca" })
+        </div>
+
+        <div>
+            @Html.LabelFor(x => x.Combustivel)
+            <select name="combustivel" class="form-control">
+                <option value="" selected>selecione</option>
+                <option value="0">Gasolina</option>
+                <option value="1">Etanol</option>
+                <option value="2">Diesel</option>
+                <option value="3">Flex</option>
+            </select>
+        </div>
+
+
+        <div class="form-group" style="text-align: right">
+            <button class="btn btn-success" id="btnSalvar" onclick="" type="submit">Salvar</button>
+            <button class="btn btn-danger" id="btnLimpar" type="reset">Limpar</button>
+            <a href="~/Home/Index"><span class="btn btn-default">Voltar</span></a>
+        </div>
+    </div>
+</form>
+
+
+@section scripts{
+    @Scripts.Render("~/Scripts/CadastrarCarros.js");
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
+}

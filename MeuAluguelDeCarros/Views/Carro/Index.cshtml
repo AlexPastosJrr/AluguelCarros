@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "";
+}
+
+
+<h2>Carros Disponiveis</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="form-group">
+        <table id="tabelaCarrosCadastrados" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Modelo do Veículo</th>
+                    <th>Placa do Veículo</th>
+                    <th>Ano</th>
+                    <th>Combustivel</th>
+                    <th>Cor</th>
+                    <th>Marca</th>
+                    <td>Editar</td>
+                    <td>Excluir</td>
+
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+        <div class="form-group" style="text-align: right">
+            <a href="~/Carro/Novo"><span class="btn btn-primary">Cadastrar Novo Carro</span></a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+@section scripts{
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    @Scripts.Render("~/Scripts/CadastrarCarros.js");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@foreach (var carro in Model)
+    {
+        if (carro == null)
+        {
+            <tr>
+                <td>@ViewBag.Error</td>
+            </tr>
+
+        }
+        else
+        {
+            <tr>
+                <td>@carro.Descricao</td>
+                <td>@carro.PlacaDoVeiculo</td>
+                <td>@carro.Ano</td>
+                <td id="combustivel">@carro.Combustivel</td>
+                <td>@carro.Cor</td>
+                <td>@carro.Marca</td>
+
+                <td>
+                    <a href="@Url.Action("Alterar", new {id = carro.Id})" id="">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Excluir", new { id = carro.Id })" id="btnExcluir">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    }*@

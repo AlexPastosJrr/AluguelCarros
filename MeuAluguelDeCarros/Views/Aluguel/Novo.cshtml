@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Novo";
+}
+
+<h2>Alugue seu carro</h2>
+
+    <form method="post" id="formAluguel">
+        <div class="row">
+            <div class="form-group">
+                <label>Nome Do Cliente</label>
+                <input type="text" id="nomeCliente" name="NomeDoContratante" class="form-control" />
+
+                <label>Placa do Veiculo</label>
+                <input type="text" id="placa" name="PlacaDoVeiculo" class="form-control" />
+
+            </div>
+            <div class="form-inline">
+
+            </div>
+
+            <div class="form-group" style="text-align: right">
+                <button class="btn btn-success" id="btnSalvarAluguel" onclick="SalvarAluguel();" type="submit">Salvar</button>
+                <button class="btn btn-danger" id="btnLimpar" type="reset">Limpar</button>
+                <a href="~/Home/Index"><span class="btn btn-default">Voltar</span></a>
+            </div>
+        </div>
+    </form>
+
+
+@section scripts{
+    @Scripts.Render("~/Scripts/CadastrarCarros.js");
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
+}
